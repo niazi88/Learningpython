@@ -1,0 +1,39 @@
+import random
+from art import logo
+print(logo)
+
+nums = list(range(1, 101))
+random_choice = random.choice(nums)
+
+Input_text = input("Welcome to the Number Guessing Game!\nChoose a difficulty.Type 'easy' or 'hard':  ")
+attempts = []
+if Input_text == 'hard':
+    attempts = [5]
+else:
+    attempts = [10]
+
+print(f"You have {attempts[0]} attempts remaining to guess the number.")       
+continuity = True 
+while continuity:
+    single_choice = int(input("Make a guess:   "))
+    if single_choice < random_choice:
+        attempts[0] -= 1
+        Remaining_attempts = attempts[0]
+        print("Its Too Low")
+        print(f"You have {Remaining_attempts} attempts remaining to guess the number.")
+        if attempts[0] == 0:
+            print(" You' ve run out of guesses. you lose.")
+            continuity = False 
+    
+    elif single_choice > random_choice:
+        attempts[0] -= 1
+        Remaining_attempts = attempts[0]
+        
+        print("Its Too high")
+        print(f"You have {Remaining_attempts} attempts remaining to guess the number.")
+        if attempts[0] == 0:
+            print(" You' ve run out of guesses. you lose.")
+            continuity = False 
+    else:
+        print("Congratulations ! You have choose the right number.")
+        continuity = False
