@@ -1,6 +1,4 @@
-Here's a clean and beginner-friendly `README.md` file for your Number Guessing Game written in Python. You can include this in your GitHub repository to help others understand your project.
 
----
 
 ````markdown
 # 🎯 Number Guessing Game (Python)
